@@ -1,28 +1,51 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+	<div id="app">
+		<List/>
+		<transition name="fall">
+			<Modal v-if="isModalVisible"/>
+		</transition>
+	</div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import Modal from "./components/Modal";
+import List from "./components/List.vue";
+import { mapGetters } from "vuex";
 
 export default {
   name: "app",
   components: {
-    HelloWorld
+    List,
+    Modal
+  },
+  computed: {
+    ...mapGetters(["isModalVisible"])
   }
 };
 </script>
 
 <style lang="less">
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 30px 0;
+  background-color: #f0efe9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.fall-enter-active,
+.fall-leave-active {
+  transition: transform 0.3s;
+}
+
+.fall-enter,
+.fall-leave-to {
+  transform: translateY(-100%);
 }
 </style>
