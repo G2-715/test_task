@@ -14,11 +14,6 @@ export default {
 </script>
 
 <style scoped lang="less">
-@font-face {
-  font-family: "Gotham Rounded - Book";
-  src: url("../assets/fonts/GothamRounded-Book.otf");
-  font-weight: 400;
-}
 
 .add-btn {
   width: 180px;
@@ -50,7 +45,7 @@ export default {
     width: 100%;
     text-align: center;
     margin-left: 5px;
-    font-family: "Gotham Rounded - Book";
+    font-family: "Gotham Rounded - Book", sans-serif;
     font-size: 100px;
     font-weight: 400;
     line-height: 100%;
