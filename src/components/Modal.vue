@@ -136,6 +136,7 @@
 				outline: none;
 				width: 59px;
 				height: 59px;
+				background: transparent;
 				background-image: url("../assets/delete-button.png");
 				cursor: pointer;
 			}
